@@ -17,8 +17,7 @@
 let dateToday = new Date();
 dateToday = dateToday.setSeconds(dateToday.getSeconds() + 10);
 
-const time = function (){
-
+const time = function () {
     const timer = document.getElementById("timer");
     const diffDate =  dateToday - new Date();
 
@@ -30,13 +29,12 @@ const time = function (){
     seconds = (seconds < 10) ? '0' + seconds : seconds;
     minutes = (minutes < 10) ? '0' + minutes : minutes;
 
-    if(diffDate < 0){
+    if (diffDate < 0) {
         window.location.assign('https://github.com');
         clearInterval(intervalTime); 
-    }else{
+    } else {
         timer.textContent = `${hours}:${minutes}:${seconds}`;
     };
-    
 };
 
 const intervalTime = setInterval(time, 100);

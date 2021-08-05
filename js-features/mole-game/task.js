@@ -6,23 +6,26 @@ const holeGame = document.getElementsByClassName('hole');
 
 let counter = 0;
 
-for(let i = 1; i <= holeGame.length; i++){
-
+for(let i = 1; i <= holeGame.length; i++) {
     const getHole = document.getElementById(`hole${i}`);
-    const result = () => {lost.textContent = 0; dead.textContent = 0; counter = 0;};
+    const result = () => {
+        lost.textContent = 0;
+        dead.textContent = 0;
+        counter = 0;
+    };
     
-    getHole.onclick = function (){
+    getHole.onclick = function () {
         counter++;
-        if(getHole.classList.contains('hole_has-mole')){
+        if (getHole.classList.contains('hole_has-mole')) {
             dead.textContent++;   
-        }else{          
+        } else {          
             lost.textContent++;
-            if(lost.textContent == 5){
+            if (lost.textContent == 5) {
                 alert('вы проиграли');
                 result();
             };
         };
-        if(counter === 10){
+        if (counter === 10) {
                 alert('вы победили');
                 result();
         };
