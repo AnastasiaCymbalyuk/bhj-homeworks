@@ -29,23 +29,13 @@ const activeClass = (index) => {
 };
 
 next.onclick = function (){
-    if(index == lengthSlider.length - 1){
-        index = 0;
-        activeClass(index);
-    }else{
-        index++;
-        activeClass(index);
-    };
+    index == lengthSlider.length - 1 ? index = 0 : index++;
+    activeClass(index);
 };
 
 prev.onclick = function (){
-    if(index == 0){
-        index = lengthSlider.length - 1;
-        activeClass(index);
-    }else{
-        index--;
-        activeClass(index);
-    }; 
+    index == 0 ? index = lengthSlider.length - 1 : index--;
+    activeClass(index);
 };
 
 allDot.forEach((item, indexDot) => {
